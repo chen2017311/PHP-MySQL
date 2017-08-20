@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+<div ng-controller="myContr">
+	请输入姓名：<input type="text" value="" ng-model="text">
+    <p ng-bind="text"></p>
+    这是表达式输入的：{{text}}
+</div>
+
+<script>
+var app = angular.module("myApp",[]);
+app.controller("myContr",function($scope){
+	$scope.text = "请输入用户名";	
+	
+});
+
+</script>
+
+</body>
+</html>

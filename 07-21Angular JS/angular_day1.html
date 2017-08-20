@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>angular_day1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>AngularJS简介</h1>
+<ul>
+<li>AngularJS简介</li>
+<li>AngularJS特性</li>
+<li>AngularJS的优点</li>
+<li>AngulaJS的缺点</li>
+</ul>
+<h2>AngularJS简介</h2>
+<p>Angular是Google公司提供的一套开源项目框架，准确的说，是一套基于MVC结构的JavaScript开发工具，该工具的核心功能是对现有HTML编码以指令方式进行扩展，并使扩展后的HTML编码可以通过元素声明的方式来构建动态内容。
+AngularJS是为了克服HTML在构建应用上的不足而设计的。</p>
+<h2>AngularJS特性</h2>
+<ul>
+<li>使用双大括号{{}}语法进行数据绑定；</li>
+<li>使用DOM控制结构来实现迭代或者隐藏DOM片段；</li>
+<li>支持表单和表单的验证；</li>
+<li>能将逻辑代码关联到相关的DOM元素上；</li>
+<li>能将HTML分组成可重用的组件。</li>
+</ul>
+<h2>AngularJS的优点</h2>
+<ul>
+<li>AngularJS提供一个非常干净和维护的方式来创造单页的应用。</li>
+<li>AngularJS提供数据绑定功能在HTML中，从而给用户提供丰富和响应的体验</li>
+<li>AngularJS提供了可重用的组件。</li>
+<li>使用AngularJS，开发人员编写更少的代码，并获得更多的功能。</li>
+<li>在AngularJS中，视图都是纯HTML页面，并用JavaScript编写控制器做业务处理。</li>
+</ul>
+<h2>AngulaJS的缺点</h2>
+<ul>
+<li>不安全：因为只是JavaScript一种框架，由AngularJS编写的应用程序是不安全的。服务器端身份验证和授权是必须用来保证应用程序的安全。</li>
+<li>不可降解：如果应用程序的用户禁用JavaScript，那最后用户看到的只是基本页面，仅此而已。</li>
+<li>重量级框架：</li>
+</ul>
+<h1>AngularJS环境设置</h1>
+<ul>
+<li>AngularJS下载</li>
+<li>第一个AngularJS示例</li>
+</ul>
+<h2>AngularJS下载</h2>
+<p>官网地址：<a href="https://angularjs.org/">https://angularjs.org/</a></p>
+<p>推荐比较稳定的版本：1.4.6</p>
+<p>最新版本：4.3.1</p>
+<p>从2.0版本以后，推翻了之前1.x所有的架构重新搭建，2.0以后变化很大，并且向前不兼容；</p>
+<h2>第一个AngularJS示例</h2>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body ng-app=&quot;&quot;&gt;
+&lt;!--
+    ng-app 指令，启动一个angular应用程序
+--&gt;
+{{&quot;hello world!&quot;}}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>AngularJS MVC体系结构</h2>
+<ul>
+<li>MVC简介</li>
+<li>模型 model</li>
+<li>视图 view</li>
+<li>控制器 controller</li>
+</ul>
+<h2>MVC简介</h2>
+<p>模型 - 视图 - 控制器或MVC，MVC是普遍的叫法，是一种软件设计模式，用于开发Web应用程序。模型- 视图 - 控制器模式是由以下三部分组成：</p>
+<ul>
+<li>模型/Model 表示应用程序核心（比如数据库记录列表）。</li>
+<li>视图/View 显示数据（数据库记录）。</li>
+<li>控制器/Controller 软件代码控制Model和View之间的相互作用。</li>
+</ul>
+<h2>模型 - model</h2>
+<p>模型是负责管理应用程序的数据。它响应来自视图的请求，同时也响应指令从控制器进行自我更新。</p>
+<h2>视图 - view</h2>
+<p>在一个特定的格式的演示数据，由控制器决定触发显示数据。它们是基于脚本的模板系统，如JSP，ASP，PHP，非常容易使用AJAX技术的集成。</p>
+<h2>控制器 - controller</h2>
+<p>控制器负责响应于用户输入并执行交互数据模型对象。控制器接收到输入，它验证输入，然后执行修改数据模型的状态的业务操作。</p>
+<h1>AngularJS第一个应用程序</h1>
+<ul>
+<li>创建应用程序</li>
+<li>如何让AngularJS与HTML集成</li>
+</ul>
+<h2>创建应用程序</h2>
+<ul>
+<li>第1步：加载框架</li>
+<li>第2步：使用ng-app指令定义AngularJS应用</li>
+<li>第3步：用 ng-model指令定义的模式名称</li>
+<li>第4步：用ng-bind指令将上述模型中的值绑定定义</li>
+</ul>
+<h2>如何让AngularJS与HTML集成</h2>
+<ul>
+<li>ng-app指令指示AngularJS应用的开始。</li>
+<li>ng-model指令创建一个名为“name”的模型变量在HTML页面中，并有ng-app指令在div内使用。</li>
+<li>ng-bind使用模型名称只要在文本框中用户输入的东西显示在HTML span标签。</li>
+<li>结束&lt;/ div&gt;标记表示AngularJS应用程序的结束。</li>
+</ul>
+<h1>AngularJS指令</h1>
+<ul>
+<li>ng-app指令</li>
+<li>ng-init 指令</li>
+<li>ng-model指令</li>
+<li>ng-repeat 指令</li>
+</ul>
+<h2>ng-app指令</h2>
+<p>ng-app 指令启动一个AngularJS应用。它定义根元素。它会自动初始化或启动加载包含AngularJS应用程序的Web页面的应用程序。它也被用来加载各种AngularJS模块AngularJS应用。</p>
+<pre><code>angular.bootstrap(document.querySelector('[ng-app=&quot;myApp2&quot;]'), ['myApp2']);   // 不建议添加两个
+</code></pre>
+
+<h2>ng-init 指令</h2>
+<p>ng-init 指令初始化一个AngularJS应用程序的数据。它被用来把值在应用程序中使用的变量。</p>
+<pre><code>&lt;div ng-init=&quot;num=5;str='这是init初始化的数据'&quot;&gt;
+    {{str}}
+    &lt;p ng-bind=&quot;num&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2>ng-model指令</h2>
+<p>ng-model指令定义在AngularJS应用中使用的模型/变量。</p>
+<pre><code>&lt;div ng-init=&quot;num=5;str='这是init初始化的数据'&quot;&gt;
+    &lt;input type=&quot;text&quot; ng-model=&quot;str&quot;&gt;
+    &lt;p ng-bind=&quot;str&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h2>ng-repeat 指令</h2>
+<p>ng-repeat 指令重复html元素集合中的每个项目。</p>
+<pre><code>&lt;div ng-init=&quot;persons=[{name:'小明',age:18},{name:'小芳',age:16}]&quot;&gt;
+
+    &lt;ul ng-repeat=&quot;per in persons&quot;&gt;
+        &lt;li&gt;姓名：{{per.name}}；年龄：{{per.age}}&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!--
+        ng-repeat 指令重复html元素集合中的每个项目。
+
+        ng-controller 指令,给元素绑定一个控制器
+    --&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h1>AngularJS表达式</h1>
+<h2>AngularJS表达式</h2>
+<ul>
+<li>AngularJS 表达式写在双大括号内：{{ expression }}。</li>
+<li>AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。</li>
+<li>AngularJS 将在表达式书写的位置&quot;输出&quot;数据。</li>
+</ul>
+<p>表达式</p>
+<ul>
+<li>使用数字</li>
+<li>使用字符串</li>
+<li>使用对象</li>
+<li>使用数组</li>
+</ul>
+<p>示例：</p>
+<pre><code>&lt;div ng-init=&quot;num=10;str='这是一个字符串';person={name:'xiaoming',age:18};arr=[1,2,3,4]&quot;&gt;
+    {{num}}，{{20}}&lt;br&gt;  &lt;!--使用数字--&gt;
+    {{str}}，{{&quot;这是一个字符串&quot;}}&lt;br&gt; &lt;!--使用字符串--&gt;
+    {{person.name}}&lt;br&gt; &lt;!--使用对象--&gt;
+    {{arr[0]}} &lt;!--使用数组--&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+<h1>AngularJS控制器</h1>
+<ul>
+<li>控制器的概念</li>
+<li>控制器初始化$scope对象</li>
+<li>添加$scope对象的方法</li>
+<li>$scope对象属性和方法的继承</li>
+</ul>
+<h2>控制器的概念</h2>
+<p>控制器是组成前端MVC框架的一员。在Angular中，控制器的功能是管理页面的逻辑代码。</p>
+<p>当控制器通过“ng-controller”指令被添加到DOM页面时，Angular将会通过控制器构造函数生成一个实体的对象，而在生成这个对象的过程中，$scope对象作为参数注入其中，并允许用户访问$scope对象。</p>
+<p>用户可以通过$scope对象与页面中的元素进行数据绑定，从而实现数据从控制器层到视图层的过程。</p>
+<h2>控制器初始化$scope对象</h2>
+<p>控制器的任务就是操作$scope对象，而这种操作具体表现在两个方面：</p>
+<ul>
+<li>一是对$scope对象进行初始化；</li>
+<li>二是为$scope对象添加各种实现逻辑功能的方法。</li>
+</ul>
+<h2>添加$scope对象的方法</h2>
+<ul>
+<li>通过表达式绑定$scope对象的方法</li>
+<li>在事件中绑定$scope对象的方法</li>
+<li>添加带参数的$scope方法</li>
+</ul>
+<h2>$scope对象属性和方法的继承</h2>
+<p>继承，顾名思义，指的是一种层次间的延续关系。</p>
+<p>由于页面本身就是一个具有层次性的DOM结构模型，而Angular中的“ng-controller”指令也允许在不同的层次元素中指定控制器。</p>
+<p>处于子层控制器中的$scope对象将会自动继承父层控制器中$scope对象的属性和方法。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+
+<body ng-app="">
+<!--
+	ng-model 指令，ng-model指令定义在AngularJS应用中使用的模型/变量。
+-->
+<div ng-init="num=5;str='这是init初始化的数据'">
+	<input type="text" ng-model="str">
+    <p ng-bind="str"></p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+
+<body>
+<!--
+	ng-app 指令启动一个AngularJS应用
+    一个页面上一般只有（最好只有）一个ng-app
+    
+-->
+<div ng-app="myApp">
+    <div ng-init="num=5;str='这是init初始化的数据'">
+        {{str}}
+        <p ng-bind="num"></p>
+    </div>
+</div>
+
+<div ng-app="myApp2">
+    <div ng-init="num2=10">
+        {{num2}}
+    </div>
+</div>
+<script>
+var app = angular.module("myApp",[]);
+var app2 = angular.module("myApp2",[]);
+angular.bootstrap(document.querySelector('[ng-app="myApp2"]'), ['myApp2']);   // 不建议添加两个
+</script>
+</body>
+</html>

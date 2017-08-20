@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+<div ng-controller="myContr">
+	<p>{{text}}</p>
+    <input type="button" value="事件绑定" ng-click="events()">
+    
+</div>
+
+<script>
+var app = angular.module("myApp",[]);
+app.controller("myContr",function($scope){
+	$scope.text = "这是初始化的数据";
+	$scope.events = function(){
+		$scope.text = "我是点击事件后显示的内容";	
+	}
+});
+
+// ng-click  指令给元素绑定一个点击事件
+</script>
+
+</body>
+</html>

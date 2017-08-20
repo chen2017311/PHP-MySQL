@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+<div ng-controller="myContr"> <!--父级控制器-->
+	<p>{{text}}</p>
+    <div ng-controller="chrContr">  <!--子控制器-->
+    	{{text}}
+        <p>{{userName}}</p>
+    </div>
+</div>
+<div ng-controller="chrContr">
+    这个是：{{text}}
+    <p>{{userName}}</p>
+</div>
+<script>
+var app = angular.module("myApp",[]);
+app.controller("myContr",function($scope){
+	$scope.text = "这是初始化的数据";
+});
+
+app.controller("chrContr",function($scope){
+	$scope.text = "哈哈";
+	$scope.userName = "ujiuye";	
+});
+
+// 父级控制器设置的scope的方法和属性，在子控制器中可以直接使用并且可以修改，但是修改的时候并不影响父级的属性和方法
+</script>
+
+</body>
+</html>

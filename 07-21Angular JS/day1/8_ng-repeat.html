@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+
+<body ng-app="">
+
+
+<div ng-init="persons=[{name:'小明',age:18},{name:'小芳',age:16}]">
+
+	<ul ng-repeat="per in persons">
+    	<li>姓名：{{per.name}}；年龄：{{per.age}}</li>
+    </ul>
+	<!--
+    	ng-repeat 指令重复html元素集合中的每个项目。
+        
+        ng-controller 指令,给元素绑定一个控制器
+    -->
+</div>
+
+
+</body>
+</html>
