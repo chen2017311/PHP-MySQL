@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+.marginTop{margin-top:50px;}
+.textIndet p{text-indent:2em; line-height:1.8; padding:0; display:block;}
+.marginTop20{margin-top:20px;}
+
+.list-li li{line-height:2;}
+.li_line{height:30px;}
+.form-search{padding:50px 0 100px;}
