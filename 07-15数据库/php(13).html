@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>php(13)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>PHP MySQL简介</h1>
+<ul>
+<li>MySQL 是什么？</li>
+<li>PHP + MySQL</li>
+</ul>
+<h2>MySQL 是什么？</h2>
+<ul>
+<li>MySQL 是一种在 Web 上使用的数据库系统。</li>
+<li>MySQL 是一种在服务器上运行的数据库系统。</li>
+<li>MySQL 不管在小型还是大型应用程序中，都是理想的选择。</li>
+<li>MySQL 是非常快速，可靠，且易于使用的。</li>
+<li>MySQL 支持标准的 SQL。</li>
+<li>MySQL 在一些平台上编译。</li>
+<li>MySQL 是免费下载使用的。</li>
+<li>MySQL 是由 Oracle 公司开发、发布和支持的。</li>
+<li>MySQL 是以公司创始人 Monty Widenius's daughter: My 命名的。</li>
+</ul>
+<h2>PHP + MySQL</h2>
+<p>PHP 与 MySQL 结合是跨平台的。（您可以在 Windows 上开发，在 Unix 平台上应用。）</p>
+<p>MySQL是跨平台的服务器,windows操作系统下的使用与linux下的使用几乎一模一样。</p>
+<p>我们将会以windows平台为基础来讲解MySQL 服务器的安装。</p>
+<p>关于 MySQL 数据库的事实</p>
+<p>关于 MySQL 的一点很棒的特性是，可以对它进行缩减，来支持嵌入的数据库应用程序。也许正因为如此，许多人认为 MySQL 仅仅能处理中小型的系统。</p>
+<p>事实上，对于那些支持巨大数据和访问量的网站（比如 Friendster、Yahoo、Google），MySQL 是事实上的标准数据库。</p>
+<h2>PHP 连接 MySQL</h2>
+<ul>
+<li>MySQLi (面向对象)  （记住）</li>
+<li>MySQLi (面向过程)</li>
+<li>PDO</li>
+<li>关闭连接</li>
+</ul>
+<h2>MySQLi (面向对象)</h2>
+<pre><code>&lt;?php
+    // 面向对象的方式
+    $conn = new mysqli(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;);
+
+    //  new mysqli(主机名，数据库名，数据库密码);
+
+    if($conn-&gt;connect_error){
+        die($conn-&gt;connect_error);
+    }
+
+    echo &quot;链接成功&quot;;
+
+    $conn-&gt;close();
+
+?&gt;
+</code></pre>
+
+<h2>MySQLi (面向过程)</h2>
+<pre><code>&lt;?php
+    // 面向过程的方式
+
+    $conn = mysqli_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;root&quot;);
+
+    if(!$conn){
+        die(mysqli_connect_error()); // 打印错误信息
+    }
+
+    echo &quot;链接成功&quot;;
+
+    mysqli_close($conn);
+
+?&gt;
+</code></pre>
+
+<h2>PDO</h2>
+<p>PDO 应用在 12 种不同数据库中， MySQLi 只针对 MySQL 数据库。</p>
+<p>所以，如果你的项目需要在多种数据库中切换，建议使用 PDO ，这样你只需要修改连接字符串和部门查询语句即可。 使用 MySQLi, 如果不同数据库，你需要重新编写所有代码，包括查询。</p>
+<pre><code>&lt;?php
+    try{
+        $conn = new PDO(&quot;mysql:host=localhost;dbname=test&quot;,&quot;root&quot;,&quot;root&quot;);
+        echo &quot;链接成功&quot;;
+    }catch(PDOException $e){
+        echo $e-&gt;getMessage();
+    }
+
+    $conn = NULL; // 关闭数据库链接
+?&gt;
+</code></pre>
+
+<h2>关闭连接</h2>
+<p>连接在脚本执行完后会自动关闭。你也可以使用以下代码来关闭连接：</p>
+<p>实例 (MySQLi - 面向对象)</p>
+<pre><code>$conn-&gt;close();
+</code></pre>
+
+<p>实例 (MySQLi - 面向过程)</p>
+<pre><code>mysqli_close($conn);
+</code></pre>
+
+<p>实例 (PDO)</p>
+<pre><code>$conn = null;
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
